@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime incidunt magnam beatae necessitatibus quos laudantium adipisci vel, velit dignissimos mollitia vitae! Eos, dolore autem! Necessitatibus ut laudantium ad dolor veniam!
+    Laudantium dolore molestiae explicabo aperiam non iusto voluptatum, minima perspiciatis qui accusamus iure magni, autem impedit adipisci aliquid debitis doloribus porro nulla dignissimos inventore, ipsam expedita quas sequi? Recusandae, cumque!</p>
+</body>
+<script>
+    const xhr=new XMLHttpRequest()
+    xhr.open('GET','https://api.github.com/users/komal-chavan9090');
+    xhr.onreadystatechange=function()
+    {
+        console.log(xhr.readyState);
+        if(xhr.readyState===4)
+        {
+            const data=JSON.parse(this.responseText)
+            console.log(data);
+            console.log(data.login)
+        }
+    }
+    xhr.send();
+</script>
+</html>
